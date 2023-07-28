@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [MSE-PCB-N2.PcbDoc]
+   Generated File[MSE-PCB-N2.TXT]
+   Generated File[MSE-PCB-N2.LDP]
+   Generated File[MSE-PCB-N2.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 16:38:53 On 20/05/2023

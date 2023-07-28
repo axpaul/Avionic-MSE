@@ -1,0 +1,406 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">26/01/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:52:27</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc">C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">22</td></tr>
+</table>
+</td>
+</table><a name="IDIJLKXPHK0UICBCMPDBBRCHRLLG1DLJC0SGFC2ZFYARFHLA1G1FHN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKFNESX2QD0C5C1R2HXSV0XK1GLYEWAQTKLDIT1JGLII5SPRTE2HF">Clearance Constraint (Gap=8mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVQNU3T343T3MBEAKH0RR3JNUNPM5SBFYYGJVMNPHCAN12A4TLUEJ">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEO2KSJMRSKQ3ITBLHSFXZESIRIZMPCAMY102UXBLMGPHVNE4Z0PP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2ZKBNQZJP4FDFGKXBOUPLOYGIMDLLPDMBI424FL02KDHGGL2U4EI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXAKRKGQLTEIVCVWSW5RSHTS0SP4J1SKUPGLMJFYJBUV30IOSF3K">Width Constraint (Min=8mil) (Max=25mil) (Preferred=12mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKWIAVUODQV0REKDSR44J1NC1GOPI10RJRWULILLDRYDHMFL4UI4">Width Constraint (Min=10.329mil) (Max=14.281mil) (Preferred=13.574mil) (InNetClass('50R'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWSP1KM0FOCNODHAKDXGF0G5RRDC3QE5E1TVAOIPGQTSGDIKFZ23M">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPF5PQ0GFXB5EKB4BSOI1CNMAKPZOGZU1U1LEZXLTG1QZ1CNS1MSE">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAW250K3HQTKRBMNNHT4PKVLSJT2FFAMZB0F0ADPTAZWZJZGHA3L">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTYFAWEWXBBIKHBPGDIDCQIWRBEFY2HXC3TNWURPUMI0AWT5NC0KC">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEJ1VDEEWDCCQLHI2SALJAFOZPK2REQNVTQEXZ2PP5GKG4ERLTNN">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCHQ1R3TSIEBMHYUY1LOALJFANG4GD3AMNCEIHSHB2QZYJBGRGDXI">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKL0SORNEW2HHCRGMZXICTJE0RGGKLG4WLK1N4XKIFZFGCUK5KAXM">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5ZVSTASE5YUFGPRD0KDNRLO30CQBH4JVU5SKQ0EEDAZ0E0LP0L1G">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">22</td>
+</tr>
+</table><br><a name="IDPF5PQ0GFXB5EKB4BSOI1CNMAKPZOGZU1U1LEZXLTG1QZ1CNS1MSE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1790.714mil|Location2.X=1910.074mil|Location1.Y=156.855mil|Location2.Y=276.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1790.714mil|Location2.X=1910.074mil|Location1.Y=156.855mil|Location2.Y=276.216mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad Free-1(1850.394mil,216.535mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1790.714mil|Location2.X=1910.074mil|Location1.Y=3660.792mil|Location2.Y=3780.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1790.714mil|Location2.X=1910.074mil|Location1.Y=3660.792mil|Location2.Y=3780.153mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad Free-1(1850.394mil,3720.472mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=176.54mil|Location2.X=295.901mil|Location1.Y=156.855mil|Location2.Y=276.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=176.54mil|Location2.X=295.901mil|Location1.Y=156.855mil|Location2.Y=276.216mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad Free-1(236.22mil,216.535mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=176.54mil|Location2.X=295.901mil|Location1.Y=3660.792mil|Location2.Y=3780.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=176.54mil|Location2.X=295.901mil|Location1.Y=3660.792mil|Location2.Y=3780.153mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad Free-1(236.22mil,3720.472mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1411.875mil|Location2.X=1538.125mil|Location1.Y=1821.875mil|Location2.Y=1948.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1411.875mil|Location2.X=1538.125mil|Location1.Y=1821.875mil|Location2.Y=1948.125mil|Absolute=True">Hole Size Constraint: (125mil &gt; 100mil) Pad Free-15(1475mil,1885mil) on Multi-Layer Actual Hole Size = 125mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=546.875mil|Location2.X=673.125mil|Location1.Y=1821.875mil|Location2.Y=1948.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=546.875mil|Location2.X=673.125mil|Location1.Y=1821.875mil|Location2.Y=1948.125mil|Absolute=True">Hole Size Constraint: (125mil &gt; 100mil) Pad Free-15(610mil,1885mil) on Multi-Layer Actual Hole Size = 125mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=570.32mil|Location2.X=689.68mil|Location1.Y=3674.296mil|Location2.Y=3793.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=570.32mil|Location2.X=689.68mil|Location1.Y=3674.296mil|Location2.Y=3793.657mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J10-(630mil,3733.976mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=988.43mil|Location2.X=1107.79mil|Location1.Y=3689.611mil|Location2.Y=3808.971mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=988.43mil|Location2.X=1107.79mil|Location1.Y=3689.611mil|Location2.Y=3808.971mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J11-(1048.11mil,3749.291mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=640.32mil|Location2.X=759.68mil|Location1.Y=170.32mil|Location2.Y=289.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=640.32mil|Location2.X=759.68mil|Location1.Y=170.32mil|Location2.Y=289.68mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J12-(700mil,230mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=850.32mil|Location2.X=969.68mil|Location1.Y=170.32mil|Location2.Y=289.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=850.32mil|Location2.X=969.68mil|Location1.Y=170.32mil|Location2.Y=289.68mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J12-(910mil,230mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.21mil|Location2.X=1434.57mil|Location1.Y=171.029mil|Location2.Y=290.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.21mil|Location2.X=1434.57mil|Location1.Y=171.029mil|Location2.Y=290.389mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J13-(1374.89mil,230.709mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.32mil|Location2.X=1519.68mil|Location1.Y=3674.296mil|Location2.Y=3793.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.32mil|Location2.X=1519.68mil|Location1.Y=3674.296mil|Location2.Y=3793.657mil|Absolute=True">Hole Size Constraint: (118.11mil &gt; 100mil) Pad J9-(1460mil,3733.976mil) on Multi-Layer Actual Hole Size = 118.11mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDTYFAWEWXBBIKHBPGDIDCQIWRBEFY2HXC3TNWURPUMI0AWT5NC0KC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1351.383mil|Location2.X=1362.633mil|Location1.Y=1498.643mil|Location2.Y=1509.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1351.383mil|Location2.X=1362.633mil|Location1.Y=1498.643mil|Location2.Y=1509.893mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (7.276mil &lt; 10mil) Between Pad C1-2(1334.606mil,1525mil) on Top Layer 1 And Pad R3-1(1379.409mil,1525mil) on Top Layer 1 [Top Solder] Mask Sliver [7.276mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1581.383mil|Location2.X=1592.633mil|Location1.Y=1498.643mil|Location2.Y=1509.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1581.383mil|Location2.X=1592.633mil|Location1.Y=1498.643mil|Location2.Y=1509.893mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (7.276mil &lt; 10mil) Between Pad C7-2(1564.606mil,1525mil) on Top Layer 1 And Pad R13-1(1609.409mil,1525mil) on Top Layer 1 [Top Solder] Mask Sliver [7.276mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614.375mil|Location2.X=1625.625mil|Location1.Y=1171.42mil|Location2.Y=1182.67mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614.375mil|Location2.X=1625.625mil|Location1.Y=1171.42mil|Location2.Y=1182.67mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.904mil &lt; 10mil) Between Pad C9-1(1645.217mil,1195mil) on Top Layer 1 And Pad C9-2(1594.783mil,1195mil) on Top Layer 1 [Top Solder] Mask Sliver [5.904mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1529.375mil|Location2.X=1540.625mil|Location1.Y=1415.438mil|Location2.Y=1426.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1529.375mil|Location2.X=1540.625mil|Location1.Y=1415.438mil|Location2.Y=1426.688mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (8.535mil &lt; 10mil) Between Pad R14-1(1536.457mil,1450mil) on Top Layer 1 And Via (1535mil,1400mil) from Top Layer 1 to Bottom Layer 4 [Top Solder] Mask Sliver [8.535mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1374.375mil|Location2.X=1385.625mil|Location1.Y=1543.843mil|Location2.Y=1555.093mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1374.375mil|Location2.X=1385.625mil|Location1.Y=1543.843mil|Location2.Y=1555.093mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (7.472mil &lt; 10mil) Between Pad R3-1(1379.409mil,1525mil) on Top Layer 1 And Via (1380mil,1570mil) from Top Layer 1 to Bottom Layer 4 [Top Solder] Mask Sliver [7.472mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=770.635mil|Location2.X=781.885mil|Location1.Y=1584.375mil|Location2.Y=1595.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=770.635mil|Location2.X=781.885mil|Location1.Y=1584.375mil|Location2.Y=1595.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (8.928mil &lt; 10mil) Between Pad R40-1(800.472mil,1590mil) on Top Layer 1 And Via (755mil,1590mil) from Top Layer 1 to Bottom Layer 4 [Top Solder] Mask Sliver [8.928mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.375mil|Location2.X=1525.625mil|Location1.Y=1010.765mil|Location2.Y=1022.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.375mil|Location2.X=1525.625mil|Location1.Y=1010.765mil|Location2.Y=1022.015mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.188mil &lt; 10mil) Between Pad U3-3(1520mil,1042.638mil) on Top Layer 1 And Via (1520mil,995mil) from Top Layer 1 to Bottom Layer 4 [Top Solder] Mask Sliver [9.188mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1154.336mil|Location2.X=1165.586mil|Location1.Y=3267.697mil|Location2.Y=3278.947mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1154.336mil|Location2.X=1165.586mil|Location1.Y=3267.697mil|Location2.Y=3278.947mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.012mil &lt; 10mil) Between Pad U5-4(1159.961mil,3251.037mil) on Top Layer 1 And Via (1159.961mil,3294.624mil) from Top Layer 1 to Bottom Layer 4 [Top Solder] Mask Sliver [9.012mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDEJ1VDEEWDCCQLHI2SALJAFOZPK2REQNVTQEXZ2PP5GKG4ERLTNN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1447.736mil|Location2.X=1455.403mil|Location1.Y=2871.436mil|Location2.Y=2879.103mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1447.736mil|Location2.X=1455.403mil|Location1.Y=2871.436mil|Location2.Y=2879.103mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad C2-2(1428.425mil,2880mil) on Multi-Layer And Region (0 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.46mil|Location2.X=1409.127mil|Location1.Y=2871.374mil|Location2.Y=2879.041mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\MSE-INTERFACE-N1\MSE-PCB-N1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.46mil|Location2.X=1409.127mil|Location1.Y=2871.374mil|Location2.Y=2879.041mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad C2-2(1428.425mil,2880mil) on Multi-Layer And Region (0 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

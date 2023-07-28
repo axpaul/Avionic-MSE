@@ -1,0 +1,312 @@
+*************************************************************
+FileName = MSE-PCB-N1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Layer 4
+      File : MSE-PCB-N1.GBL
+
+    Adding Layer      : Bottom Layer 4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D64
+    D68
+    D69
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+*************************************************************
+
+*************************************************************
+Generating : Layer 2
+      File : MSE-PCB-N1.G1
+
+    Adding Layer      : Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D64
+    D68
+    D69
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : MSE-PCB-N1.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : MSE-PCB-N1.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Layer 3
+      File : MSE-PCB-N1.G2
+
+    Adding Layer      : Layer 3
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D64
+    D68
+    D69
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : MSE-PCB-N1.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : MSE-PCB-N1.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer 4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Top Layer 1
+      File : MSE-PCB-N1.GTL
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D47
+    D51
+    D54
+    D55
+    D56
+    D60
+    D64
+    D68
+    D69
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : MSE-PCB-N1.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D24
+    D25
+    D34
+    D35
+    D38
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : MSE-PCB-N1.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer 4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : MSE-PCB-N1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : MSE-PCB-N1.GM
+
+
+Used DCodes :
+    D86
+*************************************************************
+

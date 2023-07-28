@@ -1,0 +1,4 @@
+Record=TopLevelDocument|FileName=MainSheet.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=MainSheet.SchDoc|Designator=Connecteur|SchDesignator=Connecteur|FileName=GPIOSheet.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=GPIOSheet.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=MainSheet.SchDoc|Designator=Motor|SchDesignator=Motor|FileName=MotorSheet.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=MotorSheet.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=MainSheet.SchDoc|Designator=Sensor|SchDesignator=Sensor|FileName=SensorSheet.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=SensorSheet.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
