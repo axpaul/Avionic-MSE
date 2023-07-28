@@ -3,6 +3,8 @@
 
 *CC BY-NC-SA 4.0*
 
+![alt tag](https://github.com/axpaul/Avionic-MSE/blob/main/Image/4.png)
+
 ## Projet MarSoniquE (MSE)
 
 Le projet MarSoniquE (MSE, également connu sous le nom de Marsaut E), a pour ambition de développer une fusée expérimentale fiable et robuste pour réaliser des études approfondies dans le domaine supersonique. Jusqu'à présent, aucune fusée expérimentale n'a réussi à réaliser un vol nominal avec de telles caractéristiques lors des événements du C'Space organisés sur le site d'essai du 1er RHP. En partageant notre approche et nos résultats par le biais d'une démarche Open Source, nous visons à établir les bases d'un modèle de projet qui permettra de surmonter ce défi.
