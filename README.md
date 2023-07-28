@@ -50,7 +50,21 @@ Le LM340AT est un régulateur de tension qui assure une alimentation stable pour
 
 Le 1210L110/16WR est un fusible réarmable PTC (Positive Temperature Coefficient) qui offre une protection efficace contre les surintensités dans votre circuit. Contrairement
 
+## Driver
 
+Le contrôle des différents systèmes de la fusée nécessite des drivers efficaces et robustes pour assurer un fonctionnement optimal. Nous avons donc sélectionné les composants suivants :
+
+### Driver pont en H DRV8871DDARQ1
+
+Le DRV8871DDARQ1 est un contrôleur de moteur à courant continu (DC) de haute performance. Il est capable de piloter efficacement un moteur avec des commandes précises, ce qui est essentiel pour le contrôle du mouvement de la trappe de notre fusée.
+
+Ce driver offre une performance élevée avec une tension d'alimentation de 6.5V à 45V et un courant de sortie de jusqu'à 3.6A. Ces spécifications garantissent qu'il peut gérer les demandes de nos moteurs de manière efficace et fiable.
+
+### 74HC14D,653
+
+Le 74HC14D,653 est une porte logique inverseuse avec des entrées de type Schmitt. Cette porte logique joue un rôle crucial dans la détection de la fin de course des moteurs de notre fusée.
+
+En transformant des signaux d'entrée analogiques ou numériques en signaux de sortie numériques standardisés, le 74HC14D,653 permet de nettoyer les signaux bruités. C'est une caractéristique essentielle pour garantir un fonctionnement sûr et efficace du système de récupération de notre fusée.
 
 
 
