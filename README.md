@@ -3,7 +3,10 @@
 
 *CC BY-NC-SA 4.0*
 
-Ce nouveau séquenceur descend de l'expérience acquise sur les précédentes avioniques de Marsaut 0&1. Le but principal ici est de réaliser un objet résistant à l'environnement mécanique qui va être rencontré lors du vol. En effet, d'après les premières études théoriques, notre fusée rencontrera une accélération de 28g et d'importants phénomènes vibratoires dans le domaine transsonique. De plus, la crise actuelle des semiconducteurs nous force à faire des choix restrictifs de composant. C'est la raison principale du remplacement de nombreux composants, comme les STM32 de chez STmicroélectronique ou le BMP280 de chez BOSH n'étant plus disponibles. 
+## Projet MarSoniquE (MSE)
+
+Le projet MarSoniquE (MSE, également connu sous le nom de Marsaut E), a pour ambition de développer une fusée expérimentale fiable et robuste pour réaliser des études approfondies dans le domaine supersonique. Jusqu'à présent, aucune fusée expérimentale n'a réussi à réaliser un vol nominal avec de telles caractéristiques lors des événements du C'Space organisés sur le site d'essai du 1er RHP. En partageant notre approche et nos résultats par le biais d'une démarche Open Source, nous visons à établir les bases d'un modèle de projet qui permettra de surmonter ce défi.
+Ce nouveau séquenceur pour ce projet descend de l'expérience acquise sur les précédentes avioniques de Marsaut 0 et 1. Le but principal ici est de réaliser un objet résistant à l'environnement mécanique qui va être rencontré lors du vol supersonique. En effet, d'après les premières études théoriques, notre fusée rencontrera une accélération de 28g et d'importants phénomènes vibratoires dans le domaine transsonique. De plus, la crise actuelle des semiconducteurs nous force à faire des choix restrictifs de composant. 
 
 ## Microcontrôleur
 
