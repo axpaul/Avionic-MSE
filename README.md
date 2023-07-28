@@ -3,7 +3,7 @@
 
 *CC BY-NC-SA 4.0*
 
-![alt tag](https://github.com/axpaul/Avionic-MSE/blob/main/Image/4.png)
+![alt tag](https://github.com/axpaul/Avionic-MSE/blob/main/Image/Publication%20MSE.png)
 
 Grabcad :
 - https://grabcad.com/library/avionics-system-for-mse-rocket-1
