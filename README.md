@@ -27,7 +27,7 @@ Le capteur 26PCGFA6D est un capteur de pression différentiel qui sera utilisé 
 
 Pour acquérir l'ensemble des paramètres de base du vol de la fusée, nous utiliserons :
 
-- L'IMU - 6 axes, ICM20649 (capable de lire jusqu'à 30G)
+- L'IMU - 6 axes, mpu9250 (capable de lire jusqu'à 16G)
 - L'altimètre (pression/température) LPS22HB
 
 ## GPS
