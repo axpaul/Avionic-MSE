@@ -5,6 +5,9 @@
 
 ![alt tag](https://github.com/axpaul/Avionic-MSE/blob/main/Image/4.png)
 
+Grabcad :
+- https://grabcad.com/library/avionics-system-for-mse-rocket-1
+
 ## Projet MarSoniquE (MSE)
 
 Le projet MarSoniquE (MSE, également connu sous le nom de Marsaut E), a pour ambition de développer une fusée expérimentale fiable et robuste pour réaliser des études approfondies dans le domaine supersonique. Jusqu'à présent, aucune fusée expérimentale n'a réussi à réaliser un vol nominal avec de telles caractéristiques lors des événements du C'Space organisés sur le site d'essai du 1er RHP. En partageant notre approche et nos résultats par le biais d'une démarche Open Source, nous visons à établir les bases d'un modèle de projet qui permettra de surmonter ce défi.
@@ -24,7 +27,7 @@ Le capteur 26PCGFA6D est un capteur de pression différentiel qui sera utilisé 
 
 Pour acquérir l'ensemble des paramètres de base du vol de la fusée, nous utiliserons :
 
-- L'IMU - 6 axes, ICM20649 (capable de lire jusqu'à 30G)
+- L'IMU - 6 axes, mpu9250 (capable de lire jusqu'à 16G)
 - L'altimètre (pression/température) LPS22HB
 
 ## GPS
