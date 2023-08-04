@@ -1,5 +1,5 @@
 # Avionic-MSE
-*MSE experimental rocket avionic (On-board electronics) created by Paul Miailhe, Version 2023 launched at C'space*
+*MSE experimental rocket avionic (On-board electronics), Version 2023 launched at C'space*
 
 *CC BY-NC-SA 4.0, Copyright 2023 Miailhe Paul, all rights reserved*
 
