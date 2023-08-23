@@ -56,7 +56,7 @@ Le LM340AT est un régulateur de tension qui assure une alimentation stable pour
 
 ### 1210L110/16WR Littelfuse PTC
 
-Le 1210L110/16WR est un fusible réarmable PTC (Positive Temperature Coefficient) qui offre une protection efficace contre les surintensités dans votre circuit. Contrairement
+Le 1210L110/16WR est un fusible réarmable PTC (Positive Temperature Coefficient) qui offre une protection efficace contre les surintensités dans votre circuit. 
 
 ## Driver
 
