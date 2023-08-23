@@ -79,12 +79,9 @@ En transformant des signaux d'entrée analogiques ou numériques en signaux de s
 Le schéma synotique du projet avionique :
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/Sypnotique%20MSE.png)
 
-### Pinout
+### Pinout séquenceur & sensor :
 
-Pinout Séquenceur :
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/MSE%20SEQ%20PINOUT.png)
-
-Pinout sensor :
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/MSE%20SENSOR%20PINOUT.png)
 
 ### Tableau des cartes :
