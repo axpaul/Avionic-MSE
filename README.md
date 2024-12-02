@@ -8,81 +8,79 @@
 Grabcad :
 - https://grabcad.com/library/avionics-system-for-mse-rocket-1
 
-## Projet MarSoniquE (MSE)
+---
 
-Le projet MarSoniquE (MSE, également connu sous le nom de Marsaut E), a pour ambition de développer une fusée expérimentale fiable et robuste pour réaliser des études approfondies dans le domaine supersonique. Jusqu'à présent, aucune fusée expérimentale n'a réussi à réaliser un vol nominal avec de telles caractéristiques lors des événements du C'Space organisés sur le site d'essai du 1er RHP. En partageant notre approche et nos résultats par le biais d'une démarche Open Source, nous visons à établir les bases d'un modèle de projet qui permettra de surmonter ce défi.
-Ce nouveau séquenceur pour ce projet descend de l'expérience acquise sur les précédentes avioniques de Marsaut 0 et 1. Le but principal ici est de réaliser un objet résistant à l'environnement mécanique qui va être rencontré lors du vol supersonique. En effet, d'après les premières études théoriques, notre fusée rencontrera une accélération de 28g et d'importants phénomènes vibratoires dans le domaine transsonique. De plus, la crise actuelle des semiconducteurs nous force à faire des choix restrictifs de composant. 
+# Projet MarSoniquE (MSE)
 
-## Microcontrôleur
+Le projet **MarSoniquE (MSE)**, également connu sous le nom de **Marsaut E**, vise à concevoir une fusée expérimentale robuste et adaptée aux vols supersoniques pour mener des études spécifiques dans ce domaine. À ce jour, aucune fusée expérimentale n’a réalisé de vol nominal avec des caractéristiques similaires lors des événements du **C’Space** sur le site d’essai du 1er RHP. En s’appuyant sur une démarche Open Source, le projet cherche à fournir un cadre technique permettant de relever ce défi.
 
-Ainsi, nous avons sélectionné le microcontrôleur RP2040 pour notre projet, provenant de chez Raspberry, ayant un cœur ARM Cortex-M0+ et ces différents drivers intégrés comme le lecteur de flash (Quad-SPI) est bien adapté à notre solution.
+Le développement s’appuie sur l’expérience acquise avec les avioniques des projets précédents **Marsaut 0** et **Marsaut 1**. L’objectif principal est de créer une structure résistante aux contraintes mécaniques d’un vol supersonique, avec des accélérations atteignant **28g** et des vibrations significatives dans le domaine transsonique. Par ailleurs, la crise actuelle des semi-conducteurs impose des choix restrictifs en termes de composants.
 
-## Capteurs
+---
 
-### Instrumentation Analogique
+## Composants techniques
 
-Le capteur 26PCGFA6D est un capteur de pression différentiel qui sera utilisé pour la sonde Pitot. Ce capteur, qui possède une capacité de lecture allant jusqu'à 250 PSI, est parfaitement adapté à la plage de mesures de notre vol. Cependant, étant un capteur analogique et fonctionnant sur le principe du pont de Wheatstone, le 26PCGFA6D nécessite un traitement spécifique du signal. Pour ce faire, nous utiliserons l'amplificateur opérationnel à instrumentation INA121 pour amplifier proprement le signal du capteur. Le signal analogique amplifié est ensuite converti en signal numérique grâce à l'utilisation d'un convertisseur analogique-numérique (CAN) ADS1014. Cette combinaison permet d'obtenir un signal numérique précis et exploitable à partir du signal analogique brut du capteur 26PCGFA6D.
+### Microcontrôleur
+- **RP2040** : Microcontrôleur de Raspberry basé sur un cœur **ARM Cortex-M0+**.  
+  Il intègre des fonctionnalités telles que la gestion de mémoire flash (Quad-SPI) et répond aux besoins du projet.
 
-### Instrumentation Numérique
+---
 
-Pour acquérir l'ensemble des paramètres de base du vol de la fusée, nous utiliserons :
+### Instrumentation
 
-- L'IMU - 6 axes, mpu9250 (capable de lire jusqu'à 16G)
-- L'altimètre (pression/température) LPS22HB
+#### Capteurs analogiques
+- **26PCGFA6D** : Capteur de pression différentiel pour la sonde Pitot, mesurant jusqu’à **250 PSI**.
+  - **Amplificateur** : Utilisation de l’**INA121** pour amplifier proprement le signal.
+  - **Convertisseur analogique-numérique** : **ADS1014** pour transformer le signal amplifié en données numériques exploitables.
 
-## GPS
+#### Capteurs numériques
+- **IMU MPU9250** : Capteur inertiel 6 axes, capable de mesurer des accélérations jusqu’à **16g**.  
+- **LPS22HB** : Altimètre combinant mesures de pression et de température.  
+- **GPS MAX-M10S** : Module GPS compact, opérationnel jusqu’à **80 000 m d’altitude**, **500 m/s** de vitesse et avec une dynamique maximale de **4g**.
 
-### GPS MAX-M10S
+---
 
-Le MAX-M10S est un module GPS compact et performant, capable de fournir des coordonnées précises, des informations de temps et de vitesse. Ce module GPS peut fonctionner efficacement jusqu'à une altitude de 80 000 mètres, une vitesse de 500 m/s et une dynamique inférieure ou égale à 4g. Ces limites opérationnelles le rendent idéal pour des applications à haute altitude et haute vitesse comme notre fusée supersonique.
+### Transmission radio
+- **SX1276** : Transcepteur LoRa fonctionnant sur **868 MHz**, permettant une communication longue portée et fiable.  
+  Il est conçu pour fonctionner efficacement dans des conditions de faible signal grâce à sa sensibilité élevée et sa réduction de bruit intégrée.
 
-## Radio
+---
 
-### Module radio SX1276 868mHz
+### Stockage
+- **W25Q128JV** : Mémoire flash **SPI de 128 Mbits** utilisée pour l’enregistrement des données en vol.
 
-Le SX1276 est un transcepteur RF qui utilise la technologie LoRa (Long Range), permettant une communication sans fil longue portée. Cette technologie de communication est idéale pour notre fusée, car elle permet une transmission de données fiable même à de grandes distances. En outre, le SX1276 dispose d'une excellente sensibilité de réception et d'une technologie de réduction de bruit intégrée. Cela signifie que même dans des conditions de signal faible, ce module est capable de maintenir une communication claire et stable. Ce sont des caractéristiques essentielles pour garantir la réussite de notre projet.
+---
 
-## Enregistrement
+### Alimentation
+- **LM340AT** : Régulateur de tension fournissant des tensions fixes de **5V**, **12V** et **15V**, avec une capacité de courant de **1A**.  
+- **1210L110/16WR** : Fusible réarmable **PTC** protégeant le circuit contre les surintensités.
 
-### Flash W25Q128JV SPI 128 Mbit
+---
 
-La W25Q128JV offre une capacité de stockage impressionnante de 128 Mbits, ce qui permet de stocker une grande quantité de données. Ce composant utilise une interface SPI (Serial Peripheral Interface) pour une communication rapide et efficace avec d'autres composants électroniques.
+### Drivers et circuits
+- **DRV8871DDARQ1** : Contrôleur de moteur à courant continu.  
+  - Tension d’alimentation : **6,5V à 45V**.  
+  - Courant de sortie : jusqu’à **3,6A**.  
+  Ce composant est utilisé pour piloter les systèmes mécaniques, tels que la trappe de récupération.
 
-## Puissance
+- **74HC14D,653** : Porte logique inverseuse Schmitt.  
+  Elle stabilise les signaux bruités des fins de course des moteurs et garantit un fonctionnement sûr du système de récupération.
 
-### Régulateur LM340AT
-
-Le LM340AT est un régulateur de tension qui assure une alimentation stable pour les composants électroniques. Il peut fournir des tensions de sortie fixes de 5V, 12V et 15V. Il peut délivrer un courant jusqu'à 1A, ce qui le rend capable d'alimenter un large éventail de dispositifs. Le LM340AT est connu pour sa fiabilité et sa stabilité, offrant une performance constante même dans des conditions difficiles.
-
-### 1210L110/16WR Littelfuse PTC
-
-Le 1210L110/16WR est un fusible réarmable PTC (Positive Temperature Coefficient) qui offre une protection efficace contre les surintensités dans votre circuit. 
-
-## Driver
-
-Le contrôle des différents systèmes de la fusée nécessite des drivers efficaces et robustes pour assurer un fonctionnement optimal. Nous avons donc sélectionné les composants suivants :
-
-### Driver pont en H DRV8871DDARQ1
-
-Le DRV8871DDARQ1 est un contrôleur de moteur à courant continu (DC) de haute performance. Il est capable de piloter efficacement un moteur avec des commandes précises, ce qui est essentiel pour le contrôle du mouvement de la trappe de notre fusée.
-
-Ce driver offre une performance élevée avec une tension d'alimentation de 6.5V à 45V et un courant de sortie de jusqu'à 3.6A. Ces spécifications garantissent qu'il peut gérer les demandes de nos moteurs de manière efficace et fiable.
-
-### 74HC14D,653
-
-Le 74HC14D,653 est une porte logique inverseuse avec des entrées de type Schmitt. Cette porte logique joue un rôle crucial dans la détection de la fin de course des moteurs de notre fusée.
-
-En transformant des signaux d'entrée analogiques ou numériques en signaux de sortie numériques standardisés, le 74HC14D,653 permet de nettoyer les signaux bruités. C'est une caractéristique essentielle pour garantir un fonctionnement sûr et efficace du système de récupération de notre fusée.
+---
 
 ### Synoptic
 
 Le schéma synotique du projet avionique :
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/Sypnotique%20MSE.png)
 
+---
+
 ### Pinout séquenceur & sensor :
 
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/MSE%20SEQ%20PINOUT.png)
 ![alt text](https://github.com/axpaul/Avionic-MSE/blob/main/Image/MSE%20SENSOR%20PINOUT.png)
+
+---
 
 ### Tableau des cartes :
 
