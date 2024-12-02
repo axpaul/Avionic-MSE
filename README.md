@@ -85,10 +85,10 @@ Ces cartes "faites maison" sont conçues pour répondre précisément aux contra
 ---
 
 ### Cartes commerciales intégrées
-En complément des cartes internes, des composants électroniques prêts à l’emploi sont utilisés pour leurs performances et leur fiabilité :  
-- **RP2040 avec 128 Mbits de flash** : Carte microcontrôleur compacte de chez **Waveshare**, utilisée pour le traitement et la gestion des données.  
-- **Carte capteurs 10DOF** : Fournie également par **Waveshare**, cette carte regroupe plusieurs capteurs inertiels et environnementaux pour mesurer les accélérations, la pression et d'autres paramètres critiques.  
-- **Module RGB** : Ajoute une capacité visuelle (ex. : indicateurs LED) pour le suivi et l’état du système.
+
+En complément des cartes développées en interne, des cartes électroniques standard sont utilisées pour leur fiabilité et leurs caractéristiques techniques adaptées aux besoins du projet :  
+- **RP2040 avec 128 Mbits de flash** : Une carte microcontrôleur compacte conçue pour gérer le traitement et l'exécution des tâches critiques.  
+- **Carte capteurs 10DOF** : Proposée par **Waveshare**, cette carte combine des capteurs inertiels et environnementaux pour mesurer des paramètres tels que les accélérations, la pression, et plus encore. Plus d'informations disponibles ici : [Waveshare Pico-10DOF-IMU](https://www.waveshare.com/pico-10dof-imu.htm).
 
 ---
 
