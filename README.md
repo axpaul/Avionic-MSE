@@ -68,6 +68,30 @@ Le développement s’appuie sur l’expérience acquise avec les avioniques des
 
 ---
 
+## Architecture des cartes et choix des composants
+
+### Cartes développées en interne
+Deux des cartes principales utilisées dans l’avionique de la fusée sont conçues et fabriquées sur mesure pour répondre aux besoins spécifiques du projet :  
+1. **Carte avionique** :  
+   - Intègre le module **LoRa (SX1276)**, le **GPS (MAX-M10S)**, les **drivers moteurs**, et les **portes inverseuses (74HC14D,653)** pour le traitement des signaux.  
+   - Inclut également un **buzzer** pour les alertes sonores.
+
+2. **Carte interface** :  
+   - Gère l'alimentation et les isolateurs numériques pour séparer et protéger les signaux.  
+   - Permet l’accueil des capteurs et du microcontrôleur principal, avec des connecteurs dédiés aux cartes auxiliaires.
+
+Ces cartes "faites maison" sont conçues pour répondre précisément aux contraintes mécaniques, environnementales et fonctionnelles du projet, tout en offrant une grande flexibilité pour l’intégration.
+
+---
+
+### Cartes commerciales intégrées
+En complément des cartes internes, des composants électroniques prêts à l’emploi sont utilisés pour leurs performances et leur fiabilité :  
+- **RP2040 avec 128 Mbits de flash** : Carte microcontrôleur compacte de chez **Waveshare**, utilisée pour le traitement et la gestion des données.  
+- **Carte capteurs 10DOF** : Fournie également par **Waveshare**, cette carte regroupe plusieurs capteurs inertiels et environnementaux pour mesurer les accélérations, la pression et d'autres paramètres critiques.  
+- **Module RGB** : Ajoute une capacité visuelle (ex. : indicateurs LED) pour le suivi et l’état du système.
+
+---
+
 ### Synoptic
 
 Le schéma synotique du projet avionique :
