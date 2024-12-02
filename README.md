@@ -71,24 +71,26 @@ Le développement s’appuie sur l’expérience acquise avec les avioniques des
 ## Architecture des cartes et choix des composants
 
 ### Cartes développées en interne
-Deux des cartes principales utilisées dans l’avionique de la fusée sont conçues et fabriquées sur mesure pour répondre aux besoins spécifiques du projet :  
+
+Deux cartes principales de l’avionique de la fusée ont été spécialement conçues et fabriquées pour répondre aux exigences spécifiques du projet :
+
 1. **Carte avionique** :  
-   - Intègre le module **LoRa (SX1276)**, le **GPS (MAX-M10S)**, les **drivers moteurs**, et les **portes inverseuses (74HC14D,653)** pour le traitement des signaux.  
-   - Inclut également un **buzzer** pour les alertes sonores.
+   - Regroupe les composants essentiels tels que le module **LoRa (SX1276)**, le **GPS (MAX-M10S)**, les **drivers moteurs** et les **portes inverseuses (74HC14D,653)** pour le traitement des signaux.  
+   - Inclut également un **buzzer** destiné aux alertes sonores durant les phases critiques.
 
 2. **Carte interface** :  
-   - Gère l'alimentation et les isolateurs numériques pour séparer et protéger les signaux.  
-   - Permet l’accueil des capteurs et du microcontrôleur principal, avec des connecteurs dédiés aux cartes auxiliaires.
+   - Assure la gestion de l’alimentation ainsi que l’isolation numérique pour protéger et séparer les signaux.  
+   - Offre des connecteurs dédiés pour accueillir des capteurs et des cartes auxiliaires, y compris celles équipées de microcontrôleurs.
 
-Ces cartes "faites maison" sont conçues pour répondre précisément aux contraintes mécaniques, environnementales et fonctionnelles du projet, tout en offrant une grande flexibilité pour l’intégration.
+Ces cartes sur mesure ont été développées pour répondre aux contraintes mécaniques, environnementales et fonctionnelles du projet, tout en garantissant une intégration modulaire et flexible.
 
 ---
 
 ### Cartes commerciales intégrées
 
-En complément des cartes développées en interne, des cartes électroniques standard sont utilisées pour leur fiabilité et leurs caractéristiques techniques adaptées aux besoins du projet :  
-- **RP2040 avec 128 Mbits de flash** : Une carte microcontrôleur compacte conçue pour gérer le traitement et l'exécution des tâches critiques.  
-- **Carte capteurs 10DOF** : Proposée par **Waveshare**, cette carte combine des capteurs inertiels et environnementaux pour mesurer des paramètres tels que les accélérations, la pression, et plus encore. Plus d'informations disponibles ici : [Waveshare Pico-10DOF-IMU](https://www.waveshare.com/pico-10dof-imu.htm).
+En complément des cartes développées en interne, des cartes électroniques standard ont été sélectionnées pour leur fiabilité et leurs performances adaptées au projet :  
+- **RP2040 avec 128 Mbits de flash** : Une carte microcontrôleur RP2040 compacte équipée de mémoire flash et conçue sous le format Pico.  
+- **Carte capteurs 10DOF** : Fournie par **Waveshare**, cette carte intègre des capteurs inertiels et un baromètre pour mesurer des paramètres comme les accélérations et la pression. Plus d'informations disponibles ici : [Waveshare Pico-10DOF-IMU](https://www.waveshare.com/pico-10dof-imu.htm).
 
 ---
 
