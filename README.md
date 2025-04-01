@@ -89,7 +89,7 @@ Ces cartes sur mesure ont été développées pour répondre aux contraintes mé
 ### Cartes commerciales intégrées
 
 En complément des cartes développées en interne, des cartes électroniques standard commercial ont été choisies pour leur disponibilité et leur coût réduit, tout en répondant aux besoins du projet :
-- **RP2040 avec 128 Mbits de flash** : Une carte microcontrôleur RP2040 compacte équipée de mémoire flash et conçue sous le format Pico.  
+- **RP2040-YD avec 128 Mbits de flash** : Une carte microcontrôleur RP2040 compacte équipée de mémoire flash et conçue sous le format Pico.  
 - **Carte capteurs 10DOF** : Fournie par **Waveshare**, cette carte intègre des capteurs inertiels et un baromètre pour mesurer des paramètres comme les accélérations et la pression. Plus d'informations disponibles ici : [Waveshare Pico-10DOF-IMU](https://www.waveshare.com/pico-10dof-imu.htm).
 
 ---
