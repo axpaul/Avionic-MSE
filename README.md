@@ -1,7 +1,8 @@
 # Avionic-MSE
 *MSE experimental rocket avionic (On-board electronics), Version 2023 launched at C'space*
 
-*CC BY-NC-SA 4.0, Copyright 2023 Miailhe Paul, all rights reserved*
+> Copyright 2023 Miailhe Paul, all rights reserved 
+> Material licensed under [→ CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)
 
 ![alt tag](https://github.com/axpaul/Avionic-MSE/blob/main/Image/Publication%20MSE.png)
 
